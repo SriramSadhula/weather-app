@@ -1,0 +1,262 @@
+body{
+    background:url('./weather2.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    font-family:"Comfortaa", sans-serif ;
+    color:white;
+}
+.sunContainer{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+    flex-wrap:wrap;
+}
+.sunRise,
+.sunSet{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+.searchBar
+{
+    height:10vh;
+    background-color:black;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+}
+.searchParentDiv{
+    width:50%;
+    height:fit-content;
+    position:relative;
+}
+.inputfield
+{
+    width:100%;
+    border-radius: 25px;
+    padding: 10px;
+}
+.searchIcon
+{
+    position:absolute;
+    right:10px;
+    top:6px;
+
+}
+.searchIcon:hover{
+    cursor:pointer;
+}
+.mainContentParentDiv
+{
+    height:90vh;
+    display: flex;
+    flex-direction: row;
+}
+.leftSide {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+.leftChild {
+    background: rgba(212,212,212,0.4);
+    width: 100%;
+    height: 40vh;
+    border-radius: 15px;
+    backdrop-filter: blur(15px);
+}
+.rightSide
+{
+    width:70%;
+    /* border:1px red solid; */
+
+    display:flex;
+    flex-direction:column;
+
+    gap:20px;
+}
+
+.rightRow
+{
+    height:27vh;
+    width:100%;
+
+    flex:none;
+
+    /* border:2px white solid; */
+}
+
+.currentTempDiv h6{
+    font-size: larger;
+}
+#cityName
+{
+    font-size: xx-larger;
+}
+#cityTemp
+{
+     font-size: x-larger;
+}
+#comingFiveDays
+{
+    font-size:x-large;
+}
+.extraMetric{
+    background: rgba(212,212,212,0.4);
+    padding:5% 2%;
+    width:fit-content;
+    border-radius:15px;
+    align-items: center;
+}
+.rowTwoDiv
+{
+    background: rgba(212,212,212,0.4);
+    backdrop-filter: blur(15px);
+    width: 45%;
+    height:85%;
+    border-radius: 15px;
+}
+.todayTemp{
+    background: rgba(255,255,255,0.2);
+    padding: 15px;
+    border-radius: 10px;
+
+    text-align: center;
+
+    width: 90px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    backdrop-filter: blur(10px);
+}
+
+.inputfield{
+    outline: none;
+}
+@media only screen and (max-width: 767px)
+{
+    body{
+        background-attachment: scroll;
+    }
+
+    .searchParentDiv{
+        width: 90%;
+    }
+
+    .mainContentParentDiv{
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .leftSide{
+        width: 100%;
+        padding: 10px;
+    }
+
+    .rightSide{
+        width: 100%;
+        padding: 10px;
+    }
+
+    .leftChild{
+        height: auto;
+        min-height: 250px;
+    }
+
+    .rightRow{
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+    }
+
+    .extraMetric{
+        width: 45%;
+        justify-content: center;
+    }
+
+    .rowTwoDiv{
+        width: 100%;
+        height: auto;
+        padding: 20px;
+    }
+
+    .todayTemp{
+        width: 80px;
+    }
+
+    #cityName{
+        font-size: 24px;
+    }
+
+    #cityTemp{
+        font-size: 22px;
+    }
+
+    #comingFiveDays{
+        font-size: 22px;
+    }
+    .sunContainer{
+    justify-content:center;
+}
+
+.sunRise,
+.sunSet{
+    width:100%;
+    justify-content:center;
+}
+}
+.todayCards{
+    display:flex;
+
+    gap:10px;
+
+    overflow-x:auto;
+
+    padding:10px 0;
+
+    scrollbar-width:none;
+}
+
+.todayCards::-webkit-scrollbar{
+    display:none;
+}
+
+.todayTemp{
+    min-width:90px;
+
+    background:rgba(255,255,255,0.2);
+
+    padding:15px 10px;
+
+    border-radius:15px;
+
+    text-align:center;
+
+    backdrop-filter:blur(10px);
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+}
+
+.todayTemp h3{
+    font-size:20px;
+}
+
+.todayTemp h2{
+    font-size:18px;
+}
+

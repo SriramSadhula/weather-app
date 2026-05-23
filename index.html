@@ -201,16 +201,16 @@
           console.log(date.toLocaleString());
           return date.toLocaleString();
         }
-        function getTime(timestamp, timezoneOffset)
-        {
-        return new Date((timestamp + timezoneOffset) * 1000)
-        .toLocaleTimeString('en-IN', {
-            hour: 'numeric',
-            minute: 'numeric',
-            second: 'numeric',
-            hour12: true
-        });
-        }
+      function getTime(timestamp)
+      {
+         let date = new Date(timestamp * 1000);
+
+        return date.toLocaleTimeString([], {
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true
+       });
+      }
 
          async function fetchAQIData(lat,lon)
          {
@@ -246,11 +246,7 @@
           let formattedData= await requestData.json();
          // let formattedData = await requestData.json();
 
-         if(formattedData.cod == "404")
-         {
-         alert("City not found");
-         return;
-        }
+         
           console.log(formattedData);
           let responsiveCity=formattedData.name;
           let responseTemp=formattedData.main.temp;
@@ -285,11 +281,15 @@
           // console.log("sunset:",properSunset);
           
             //demo-prac
-            let timezone = formattedData.timezone;
+            // let timezone = formattedData.timezone;
 
-             let sunrise = getTime(formattedData.sys.sunrise, timezone);
+            //  let sunrise = getTime(formattedData.sys.sunrise, timezone);
 
-             let sunset = getTime(formattedData.sys.sunset, timezone);
+            //  let sunset = getTime(formattedData.sys.sunset, timezone);
+
+            let sunrise = getTime(formattedData.sys.sunrise);
+
+            let sunset = getTime(formattedData.sys.sunset);
 
             $('#sunrise')[0].innerText=sunrise;
             $('#sunset')[0].innerText=sunset;
